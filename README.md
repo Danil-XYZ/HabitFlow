@@ -1,16 +1,24 @@
-# React + Vite
+# Habit Flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Мини-проект на React: трекер привычек с маршрутизацией, общим состоянием,
+сохранением данных в LocalStorage и загрузкой идей из внешнего API.
 
-Currently, two official plugins are available:
+## Запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Что реализовано
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `useState` для привычек, фильтров, редактирования, темы и состояния API.
+- `useEffect` для сохранения привычек в LocalStorage, сохранения темы и загрузки
+  данных из API.
+- Работа с API: страница "Идеи из API" получает данные с
+  `https://jsonplaceholder.typicode.com/todos?_limit=6`.
+- Routing через `react-router-dom`: страницы "Трекер" и "Идеи из API".
+- Sharing State: состояние хранится в `App.jsx` и передается в страницы и
+  компоненты через props.
+- Поиск, фильтрация, редактирование, удаление и отметка выполненных привычек.
+- Переключение светлой и темной темы.
